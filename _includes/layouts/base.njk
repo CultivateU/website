@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - CultivateU</title>
-    
+    <title>{{ title }} - CultivateU</title>
+    {# Link to your CSS file will go here later #}
 </head>
 <body>
     <header>
@@ -20,9 +20,7 @@
     </header>
 
     <main>
-        <h1>Hello CultivateU!</h1>
-<p>Welcome to the main page.</p>
-
+        {{ content | safe }}
     </main>
 
     <footer>
