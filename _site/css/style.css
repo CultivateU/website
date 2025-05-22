@@ -1,0 +1,70 @@
+/* Basic Reset & Body Styling */
+body {
+    font-family: 'Arial', sans-serif; /* You can choose a better font later */
+    margin: 0; /* Remove default browser margins */
+    padding: 0; /* Remove default browser padding */
+    background-color: #F4F4F4; /* Light Neutral Grey background */
+    color: #34495E; /* Dark Desaturated Blue/Charcoal for primary text */
+    line-height: 1.6;
+}
+
+/* Basic Container for Centering Content */
+.container {
+    width: 80%; /* Or a max-width like 960px */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px;  /* Adds some space inside the container */
+}
+
+/* Header Styling */
+header {
+    background-color: #2C3E50; /* Charcoal Grey (Optional dark header) */
+    color: #ECF0F1; /* Light text for dark header */
+    padding: 15px 0;
+    /* text-align: center; /* Centering is now handled by .container inside header for its children */
+}
+
+header h1 {
+    margin: 0 0 10px 0; /* Add some margin below the h1 if nav is below */
+    font-size: 2em;
+    color: #ECF0F1; /* Ensure heading color contrasts with header background */
+    text-align: center; /* Explicitly center the H1 if needed within its block */
+}
+
+header nav {
+    text-align: center; /* Center the navigation links */
+}
+
+header nav a {
+    color: #E67E22; /* Warm Muted Orange for nav links */
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav a:hover {
+    color: #F4F4F4; /* Lighter orange or white on hover */
+}
+
+/* Main Content Area */
+main {
+    /* padding: 20px 0; /* Padding is now mostly handled by the .container around main */
+}
+
+/* Headings within main content */
+main h1, main h2, main h3 { /* Note: main h1 might conflict with header h1 if not careful */
+    color: #8C4242; /* Rich Reddish-Brown/Maroon for main content headings */
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    /* padding: 20px 0; /* Padding is now mostly handled by the .container around footer */
+    margin-top: 30px;
+    border-top: 1px solid #7F8C8D; /* Stone Grey for border */
+    color: #7F8C8D; /* Stone Grey for footer text */
+}
+
+/* Optional: Remove the horizontal rules from Markdown if you don't like them */
+hr {
+    display: none;
+}
