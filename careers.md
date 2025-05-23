@@ -11,15 +11,15 @@ At CultivateU, we believe great games are made by great minds working together. 
 
 ### Roles Available
 
-Game Programming
-Level Design
-Rigging & Animation
-3D Modeling
-Texturing
-UI/UX
-Game Writing / Narrative
-Sound Design
-Website Development
+* Game Programming
+* Level Design
+* Rigging & Animation
+* 3D Modeling
+* Texturing
+* UI/UX
+* Game Writing / Narrative
+* Sound Design
+* Website Development
 
 ---
 
