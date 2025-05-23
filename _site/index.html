@@ -4,24 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - CultivateU</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
     <header>
-        <div class="container">  {/* Container for header content */}
-            <h1>CultivateU Studios</h1>
+        <div class="container">  
+            <a href="/" class="site-logo-link">
+                <img src="/images/logo-wordmark.png" alt="CultivateU Logo" class="site-logo">
+            </a>
             <nav>
-                <a href="/">Home</a> | 
-                <a href="/about/">About</a> | 
-                <a href="/games/">Games</a> | 
-                <a href="/careers/">Careers</a> | 
-                <a href="/contact/">Contact</a>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/games/">Games</a></li>
+                    <li><a href="/careers/">Careers</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container"> {/* Main container for the page's primary content and footer */}
+    <div class="container"> 
         <main>
             <h2>Empowering Minds Through Play</h2>
 <p>Where learning meets engagement through immersive educational games.</p>
@@ -34,16 +43,17 @@
 <p>A new-age farming strategy game combining fun and learning. Launching soon!</p>
 <hr>
 <h3>Get Involved</h3>
-<p>[Explore Our Games]</p>
-<p>[Join Our Team]</p>
-<p>[Contact Us]</p>
-
+<p class="cta-buttons">
+    <a href="/games/" class="cta-button">Explore Our Games</a>
+    <a href="/careers/" class="cta-button">Join Our Team</a>
+    <a href="/contact/" class="cta-button">Contact Us</a>
+</p>
         </main>
 
         <footer>
             <p>&copy; 2025 CultivateU Studios Pvt Ltd. All rights reserved.</p>
         </footer>
-    </div> {/* End of the main container */}
+    </div> 
 
 </body>
 </html>

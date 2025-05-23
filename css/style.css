@@ -1,67 +1,144 @@
 /* Basic Reset & Body Styling */
 body {
-    font-family: 'Arial', sans-serif; /* You can choose a better font later */
-    margin: 0; /* Remove default browser margins */
-    padding: 0; /* Remove default browser padding */
-    background-color: #F4F4F4; /* Light Neutral Grey background */
-    color: #34495E; /* Dark Desaturated Blue/Charcoal for primary text */
-    line-height: 1.6;
+    font-family: "Ancizar Serif", serif; 
+    margin: 0;
+    padding: 0;
+    background-color: #F4F4F4; 
+    color: #34495E; 
+    line-height: 1.7; /* Increased line height for better readability */
+    font-weight: 400; 
+    font-size: 16px; /* Set a base font size */
 }
 
 /* Basic Container for Centering Content */
 .container {
-    width: 80%; /* Or a max-width like 960px */
-    margin: 0 auto; /* Centers the container */
-    padding: 20px;  /* Adds some space inside the container */
+    width: 80%; 
+    margin: 0 auto; 
+    padding: 20px;  
 }
 
 /* Header Styling */
 header {
-    background-color: #2C3E50; /* Charcoal Grey (Optional dark header) */
-    color: #ECF0F1; /* Light text for dark header */
+    background-color: #d1e2f3; 
+    color: #ECF0F1; /* Light text for header */
     padding: 15px 0;
-    /* text-align: center; /* Centering is now handled by .container inside header for its children */
 }
 
-header h1 {
-    margin: 0 0 10px 0; /* Add some margin below the h1 if nav is below */
-    font-size: 2em;
-    color: #ECF0F1; /* Ensure heading color contrasts with header background */
-    text-align: center; /* Explicitly center the H1 if needed within its block */
+header .container {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-top: 0; 
+    padding-bottom: 0; 
 }
+
+/* Logo Styling */
+.site-logo-link {
+    display: inline-block; /* Allows setting height/width if needed, and no text decoration */
+}
+
+.site-logo {
+    max-height: 100px; /* Adjust this value as needed for your logo's size */
+    width: auto; /* Maintain aspect ratio */
+    display: block; /* Good practice for images inside links */
+}
+
+/* Adjust header h1 if you completely replaced it with the logo, or remove if not needed */
+/* The header .container flex rules should still align this logo link and the nav */
 
 header nav {
-    text-align: center; /* Center the navigation links */
+    text-align: center; 
 }
 
-header nav a {
-    color: #E67E22; /* Warm Muted Orange for nav links */
-    margin: 0 10px;
-    text-decoration: none;
-    font-weight: bold;
+header nav ul { 
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex; 
 }
 
-header nav a:hover {
-    color: #F4F4F4; /* Lighter orange or white on hover */
+header nav ul li {
+    margin-left: 15px; 
+}
+
+header nav ul li a { 
+    color: #db5459; 
+    text-decoration: none; 
+    font-weight: 700; /* Make nav links bolder */
+    padding: 8px 12px; 
+    border-radius: 4px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+header nav ul li a:hover {
+    background-color: #E67E22; 
+    color: #2C3E50; 
 }
 
 /* Main Content Area */
 main {
-    /* padding: 20px 0; /* Padding is now mostly handled by the .container around main */
+    /* No specific styles needed here for now if .container handles padding */
+}
+
+main section { /* Let's assume you might wrap sections of content in <section> tags later */
+    margin-bottom: 30px; /* Add space below sections */
 }
 
 /* Headings within main content */
-main h1, main h2, main h3 { /* Note: main h1 might conflict with header h1 if not careful */
-    color: #8C4242; /* Rich Reddish-Brown/Maroon for main content headings */
+main h1, main h2, main h3 { 
+    color: #8C4242; 
+    font-weight: 700; 
+    margin-top: 30px; /* Space above headings */
+    margin-bottom: 15px; /* Space below headings */
+}
+
+main p {
+    margin-bottom: 15px; /* Space below paragraphs */
+}
+
+main ul, main ol {
+    margin-bottom: 15px; /* Space below lists */
+    padding-left: 20px; /* Indent lists a bit */
+}
+
+main li {
+    margin-bottom: 5px; /* Space below list items */
+}
+
+/* Call-to-Action Button Styling */
+.cta-buttons {
+    text-align: center; /* Centers the buttons within their container */
+    margin-top: 30px;   /* Space above the buttons */
+    margin-bottom: 30px;/* Space below the buttons */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #E67E22;  /* Your brand's orange accent color */
+    color: #FFFFFF;             /* White text */
+    padding: 5px 12px;          /* << MUCH SMALLER PADDING */
+    font-size: 14px;            /* << EXPLICITLY SMALLER FONT */
+    text-decoration: none;
+    font-weight: bold;          /* Or try 'normal' or '600' */
+    border-radius: 3px;         /* Slightly sharper corners if you reduce from 5px */
+    margin: 5px 8px;            /* Adjust margin if needed for spacing between buttons */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.cta-button:hover {
+    background-color: #D35400;  /* A darker shade of orange for hover */
+    color: #FFFFFF;
+    transform: translateY(-2px); /* Slight lift effect on hover */
 }
 
 /* Footer Styling */
 footer {
     text-align: center;
-    /* padding: 20px 0; /* Padding is now mostly handled by the .container around footer */
-    margin-top: 30px;
-    border-top: 1px solid #7F8C8D; /* Stone Grey for border */
-    color: #7F8C8D; /* Stone Grey for footer text */
+    margin-top: 40px; /* More space above footer */
+    border-top: 1px solid #7F8C8D; 
+    color: #7F8C8D; 
+    padding-top: 20px; 
+    padding-bottom: 20px; /* Added some padding below footer text */
 }
 
 /* Optional: Remove the horizontal rules from Markdown if you don't like them */

@@ -25,8 +25,8 @@ A new-age farming strategy game combining fun and learning. Launching soon!
 
 ### Get Involved
 
-[Explore Our Games]
-
-[Join Our Team]
-
-[Contact Us]
+<p class="cta-buttons">
+    <a href="/games/" class="cta-button">Explore Our Games</a>
+    <a href="/careers/" class="cta-button">Join Our Team</a>
+    <a href="/contact/" class="cta-button">Contact Us</a>
+</p>
