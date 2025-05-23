@@ -19,7 +19,7 @@ At CultivateU, we believe great games are made by great minds working together. 
 * UI/UX
 * Game Writing / Narrative
 * Sound Design
-* Website Development
+* Website Development and many more.
 
 ---
 
