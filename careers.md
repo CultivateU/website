@@ -9,16 +9,21 @@ At CultivateU, we believe great games are made by great minds working together. 
 
 ---
 
-### Open Roles (Examples)
+### Roles Available
 
-* Game Programmer (Unreal Engine 5)
-* Game Artist (3D modeling, texturing, animation)
-* Game Designer
-* Interns (Coding, Art, Agriculture Research, etc.)
+Game Programming
+Level Design
+Rigging & Animation
+3D Modeling
+Texturing
+UI/UX
+Game Writing / Narrative
+Sound Design
+Website Development
 
 ---
 
 
 ### To Apply
 
-Email your resume and portfolio to [careers@cultivateu.in](mailto:careers@cultivateu.in)
+Email your resume and portfolio to [arjun@cultivateu.in](mailto:arjun@cultivateu.in)
