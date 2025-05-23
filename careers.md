@@ -18,11 +18,6 @@ At CultivateU, we believe great games are made by great minds working together. 
 
 ---
 
-### How It Works
-
-We follow a project-based approach. Team members are offered shares based on their effort throughout the development phase of each project. Once the game begins generating revenue, their shares earn monthly earnings unless converted to salaries.
-
----
 
 ### To Apply
 
