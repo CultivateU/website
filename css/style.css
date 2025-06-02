@@ -1,147 +1,747 @@
-/* Basic Reset & Body Styling */
-body {
-    font-family: "Ancizar Serif", serif; 
+/* ==========================================================================
+   1. Basic Reset & Global Styles
+   ========================================================================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #F4F4F4; 
-    color: #34495E; 
-    line-height: 1.7; /* Increased line height for better readability */
-    font-weight: 400; 
-    font-size: 16px; /* Set a base font size */
 }
 
-/* Basic Container for Centering Content */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    line-height: 1.6;
+    color: #333; /* A dark gray for text */
+    background-color: #ffffff; /* Your previously set background color */
+    padding-top: 80px; /* Add padding to the top of the body to prevent content from hiding behind a fixed header */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
+
+a {
+    color: #d9534f; /* A red color, similar to your logo's potential red */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   2. Utility & Common Component Styles
+   ========================================================================== */
+
+/* Container class to center content and set max width */
 .container {
-    width: 80%; 
-    margin: 0 auto; 
-    padding: 20px;  
+    width: 90%;
+    max-width: 1100px; /* Adjust as needed */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-/* Header Styling */
-header {
-    background-color: #d1e2f3; 
-    color: #ECF0F1; /* Light text for header */
-    padding: 15px 0;
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease;
+    cursor: pointer;
 }
 
-header .container {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding-top: 0; 
-    padding-bottom: 0; 
+.btn-primary {
+    background-color: #d9534f; /* Your primary red color */
+    color: #ffffff;
+    border: 2px solid #d9534f;
 }
 
-/* Logo Styling */
-.site-logo-link {
-    display: inline-block; /* Allows setting height/width if needed, and no text decoration */
+.btn-primary:hover {
+    background-color: #c9302c; /* Darker red on hover */
+    border-color: #c9302c;
+    text-decoration: none;
+    transform: translateY(-2px);
 }
 
-.site-logo {
-    max-height: 100px; /* Adjust this value as needed for your logo's size */
-    width: auto; /* Maintain aspect ratio */
-    display: block; /* Good practice for images inside links */
+.btn-secondary {
+    background-color: #ffffff;
+    color: #d9534f; /* Red text */
+    border: 2px solid #ffffff; /* White border */
 }
 
-/* Adjust header h1 if you completely replaced it with the logo, or remove if not needed */
-/* The header .container flex rules should still align this logo link and the nav */
+.btn-secondary:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+    color: #7b0d09; /* Darker red text */
+    border-color: #f0f0f0;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
 
-header nav {
+/* General Section & Page Titles */
+.section-title { 
+    font-size: 2.2rem;
+    color: #333; 
+    margin-bottom: 1rem;
+    font-weight: bold;
     text-align: center; 
 }
 
-header nav ul { 
+.page-title { 
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Styling for intro paragraph on pages */
+.page-intro {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px; 
+    max-width: 750px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left; 
+}
+
+/* ==========================================================================
+   3. Layout Components (Header, Navigation, Footer)
+   ========================================================================== */
+
+/* Header Styling */
+.site-header {
+    background-color: #f9f9f9; /* Your previously set header background */
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eaeaea;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    position: relative; /* Added for positioning mobile nav toggle */
+}
+
+.logo-image {
+    max-height: 50px; 
+}
+
+.main-navigation ul { /* This is #main-navigation-ul in your HTML */
     list-style: none; 
-    padding: 0;
-    margin: 0;
     display: flex; 
+    margin: 0; /* Reset margin that might affect positioning */
+    padding: 0; /* Reset padding */
 }
 
-header nav ul li {
-    margin-left: 15px; 
+.main-navigation ul li {
+    margin-left: 20px; 
 }
 
-header nav ul li a { 
-    color: #db5459; 
+.main-navigation ul li a {
+    font-weight: bold;
+    color: #d9534f; 
+    display: inline-block; 
+    padding: 0.6em 1.2em;  
+    border-radius: 5px;    
     text-decoration: none; 
-    font-weight: 700; /* Make nav links bolder */
-    padding: 8px 12px; 
-    border-radius: 4px; 
-    transition: background-color 0.3s, color 0.3s; 
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; 
+    border: 2px solid transparent; 
 }
 
-header nav ul li a:hover {
-    background-color: #E67E22; 
-    color: #2C3E50; 
-}
-
-/* Main Content Area */
-main {
-    /* No specific styles needed here for now if .container handles padding */
-}
-
-main section { /* Let's assume you might wrap sections of content in <section> tags later */
-    margin-bottom: 30px; /* Add space below sections */
-}
-
-/* Headings within main content */
-main h1, main h2, main h3 { 
-    color: #8C4242; 
-    font-weight: 700; 
-    margin-top: 30px; /* Space above headings */
-    margin-bottom: 15px; /* Space below headings */
-}
-
-main p {
-    margin-bottom: 15px; /* Space below paragraphs */
-}
-
-main ul, main ol {
-    margin-bottom: 15px; /* Space below lists */
-    padding-left: 20px; /* Indent lists a bit */
-}
-
-main li {
-    margin-bottom: 5px; /* Space below list items */
-}
-
-/* Call-to-Action Button Styling */
-.cta-buttons {
-    text-align: center; /* Centers the buttons within their container */
-    margin-top: 30px;   /* Space above the buttons */
-    margin-bottom: 30px;/* Space below the buttons */
-}
-
-.cta-button {
-    display: inline-block;
-    background-color: #E67E22;  /* Your brand's orange accent color */
-    color: #FFFFFF;             /* White text */
-    padding: 5px 12px;          /* << MUCH SMALLER PADDING */
-    font-size: 14px;            /* << EXPLICITLY SMALLER FONT */
-    text-decoration: none;
-    font-weight: bold;          /* Or try 'normal' or '600' */
-    border-radius: 3px;         /* Slightly sharper corners if you reduce from 5px */
-    margin: 5px 8px;            /* Adjust margin if needed for spacing between buttons */
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.cta-button:hover {
-    background-color: #D35400;  /* A darker shade of orange for hover */
-    color: #FFFFFF;
-    transform: translateY(-2px); /* Slight lift effect on hover */
+.main-navigation ul li a:hover,
+.main-navigation ul li a.active { 
+    background-color: #b72c27; 
+    color: #ffffff;             
+    text-decoration: none;       
 }
 
 /* Footer Styling */
-footer {
+.site-footer {
     text-align: center;
-    margin-top: 40px; /* More space above footer */
-    border-top: 1px solid #7F8C8D; 
-    color: #7F8C8D; 
-    padding-top: 20px; 
-    padding-bottom: 20px; /* Added some padding below footer text */
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #eaeaea;
+    font-size: 0.7em; 
+    color: #555;
 }
 
-/* Optional: Remove the horizontal rules from Markdown if you don't like them */
-hr {
-    display: none;
+/* ==========================================================================
+   NEW: Mobile Navigation Toggle (Hamburger Menu) Styles 
+   These are general styles, behavior is controlled in media queries below.
+   ========================================================================== */
+
+.mobile-nav-toggle {
+    display: none; /* Hidden by default, shown only on mobile via media query */
+    background: transparent;
+    border: none; 
+    padding: 0.5em; /* Make it easier to tap */
+    cursor: pointer;
+    z-index: 1002; /* Ensure it's above .main-navigation when it drops down */
+}
+
+.mobile-nav-toggle:hover {
+    opacity: 0.7;
+}
+
+.sr-only { /* Style to visually hide screen reader text */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.hamburger-bar {
+    display: block;
+    width: 22px; 
+    height: 3px;  
+    background-color: #333; 
+    margin: 4px 0; 
+    transition: transform 0.3s ease-in-out, opacity 0.2s ease-in-out;
+    border-radius: 1px; 
+}
+
+/* Styles for when the menu is open (aria-expanded="true") - Hamburger turns to an 'X' */
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg); /* Adjusted translateY */
+}
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(2) {
+    opacity: 0;
+}
+.mobile-nav-toggle[aria-expanded="true"] .hamburger-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg); /* Adjusted translateY */
+}
+
+
+/* ==========================================================================
+   4. Homepage Specific Section Styles
+   (Keeping your existing structure - no changes here from your last version)
+   ========================================================================== */
+/* ... (all your .hero-section, .intro-snippet, .games-teaser-section, .game-tile, .careers-callout-section styles remain exactly as you provided) ... */
+.hero-section,
+.intro-snippet {
+    padding: 60px 0; 
+}
+.hero-section {
+    background-color: #333; 
+    color: #ffffff; 
+    text-align: center;
+}
+.hero-title {
+    font-size: 2.8rem; 
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    max-width: 700px; 
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+.intro-snippet {
+    background-color: #ffffff; 
+}
+.intro-snippet p { 
+    font-size: 1.1rem;
+    max-width: 800px; 
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    text-align: left;
+}
+.games-teaser-section {
+    padding: 60px 0;
+    background-color: #f0f0f0; 
+}
+.game-tiles {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 30px; 
+    justify-content: center; 
+    margin-top: 30px;
+}
+.game-tile {
+    background-color: #ffffff; 
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: calc(33.333% - 20px); 
+    min-width: 280px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    text-align: center; 
+    position: relative; 
+    cursor: pointer;    
+    transition: filter 0.3s ease-in-out, transform 0.3s ease-in-out; 
+}
+.tile-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(222, 222, 222, 0.4); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; 
+    transition: opacity 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+    pointer-events: none; 
+    border-radius: 8px; 
+    z-index: 5; 
+}
+.coming-soon-text {
+    color: #ffffff; 
+    font-size: 1.6rem; 
+    font-weight: bold;
+    text-align: center;
+    padding: 12px 22px; 
+    background-color: #d9534f; 
+    border-radius: 5px;       
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.25); 
+}
+.game-tile.is-active .tile-overlay { 
+    opacity: 1; 
+    pointer-events: auto; 
+    -webkit-backdrop-filter: blur(4px); 
+    backdrop-filter: blur(4px); 
+}
+.game-tile-image-placeholder { 
+    height: 180px;
+    background-color: #e9e9e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+.game-tile img { 
+    width: 100%;
+    height: auto; /* Let the height be determined by the image's aspect ratio */
+    display: block; /* Good for image spacing */
+    object-fit: initial; /* Reset object-fit, or remove the line entirely */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.game-tile h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px; 
+    color: #333;
+}
+.game-tile .game-genre {
+    font-size: 0.9em;  
+    color: #444;      
+    margin-bottom: 8px; 
+    line-height: 1.4;
+    text-align: left; 
+}
+.game-tile .game-genre strong {
+    color: #333; 
+}
+.game-tile .game-description {
+    font-size: 0.95rem; 
+    line-height: 1.5;   
+    color: #555;       
+    text-align: left; 
+}
+.careers-callout-section {
+    background-color: #b72c27; 
+    color: #ffffff;
+    padding: 60px 0;
+    text-align: center;
+}
+.careers-callout-section .section-title { 
+    color: #ffffff;
+}
+.careers-callout-section p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 25px;
+    line-height: 1.7;
+    text-align: left; 
+}
+.careers-callout-section .btn-secondary { 
+    display: block; 
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================================================
+   5. General Subpage Content Styling
+   (Keeping your existing structure - no changes here from your last version)
+   ========================================================================== */
+.page-content { 
+    padding: 40px 0;
+    background-color: #ffffff; 
+}
+
+/* ==========================================================================
+   6. About Page Specific Styles
+   (Keeping your existing structure - no changes here from your last version)
+   ========================================================================== */
+.about-intro .lead {
+    font-size: 1.25rem;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.about-illustration { 
+    max-width: 300px; 
+    margin: 0 auto 30px auto; 
+    border-radius: 8px;
+}
+.about-section {
+    margin-bottom: 30px;
+}
+.about-section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #d9534f; 
+    padding-bottom: 5px;
+    display: inline-block; 
+    text-align: left;
+}
+.about-section p,
+.about-section ul {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    color: #555;
+    text-align: left;
+}
+.about-section ul {
+    list-style: disc;
+    padding-left: 25px; 
+}
+.about-section ul li {
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   7. Careers Page Specific Styles
+   (Keeping your existing structure - no changes here from your last version)
+   ========================================================================== */
+.careers-section { 
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 8px;
+}
+.careers-section h2 { 
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.careers-section ul {
+    list-style-position: inside; 
+    padding-left: 0;          
+    margin-bottom: 15px;      
+}
+.benefits-list {
+    list-style: none; 
+    padding-left: 0;
+}
+.benefits-list li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+.apply-cta { 
+    text-align: center; 
+    background-color: #fff; 
+    border: 1px solid #ddd;
+    padding: 30px 20px;
+}
+.apply-cta .btn { 
+    font-size: 1.1rem;
+    padding: 15px 30px;
+}
+
+/* ==========================================================================
+   9. Contact Page Specific Styles (Section 8 is Media Queries) 
+   (Keeping your existing structure - no changes here from your last version)
+   ========================================================================== */
+.contact-details-form-wrapper {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 40px; 
+    margin-top: 30px;
+}
+.contact-form-container {
+    flex: 1; 
+    min-width: 300px; 
+    background-color: #f0f0f0; /* Light grey (same as games teaser section) - YOU CAN CHANGE THIS! */
+    padding: 30px;             /* Add some internal padding */
+    border-radius: 8px;        /* Optional: for rounded corners */
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Optional: subtle shadow if desired */
+}
+.contact-details h2,
+.contact-form-container h2 { 
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: left; 
+}
+.contact-details address {
+    font-style: normal;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.contact-details p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #555;
+}
+.contact-details p strong {
+    color: #333;
+}
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+.contact-form label {
+    display: block;  
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #444;
+    text-align: left; 
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;    
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    box-sizing: border-box; 
+}
+.contact-form textarea {
+    resize: vertical; 
+    min-height: 80px; 
+}
+.contact-form .form-group.submit-group {
+    text-align: center; 
+}
+.contact-form .form-group.submit-group .btn {
+    width: auto; 
+    padding-top: 12px; 
+    padding-bottom: 12px;
+}
+
+
+/* ==========================================================================
+   8. Media Queries (Responsive Adjustments) - Based on your provided code
+   ========================================================================== */
+
+/* Adjustments for smaller screens - targeting tablets and mobiles */
+@media (max-width: 768px) { 
+    body {
+        padding-top: 70px; 
+    }
+
+    .site-header { 
+        padding-top: 0.5rem; 
+        padding-bottom: 0.5rem;
+    }
+
+    .site-header .container {
+        position: relative; 
+    }
+
+    .logo-image {
+        max-height: 40px; 
+    }
+
+    .mobile-nav-toggle {
+        display: block; 
+        position: absolute; 
+        top: 50%;       
+        right: 15px;    
+        transform: translateY(-50%); 
+        z-index: 1002;   
+    }
+    
+    #main-navigation-ul { 
+        display: none; 
+        flex-direction: column; 
+        align-items: stretch;  
+        width: 100%;          
+        background-color: #f9f9f9; 
+        position: absolute; 
+        top: 100%; 
+        left: 0;
+        right: 0;
+        padding: 0; 
+        margin: 0; 
+        box-shadow: 0px 3px 5px rgba(0,0,0,0.1); 
+        z-index: 1001; 
+    }
+
+    #main-navigation-ul.nav-is-open { 
+        display: flex !important; 
+    }
+
+    /* MODIFIED .main-navigation ul li to target #main-navigation-ul li for specificity */
+    #main-navigation-ul li { 
+        margin-left: 0;       
+        margin-bottom: 0;  
+        width: 100%;          
+        text-align: left;   
+        border-bottom: 1px solid #eee; 
+    }
+    #main-navigation-ul li:last-child { /* More specific selector */
+        border-bottom: none; 
+    }
+
+    #main-navigation-ul li a { /* More specific selector */
+        padding: 0.8em 1.5em; 
+        display: block; 
+        width: 100%;   
+    }
+    #main-navigation-ul li a:hover, /* More specific selector */
+    #main-navigation-ul li a.active { 
+        background-color: #b72c27; 
+        color: #ffffff;          
+    }
+
+    /* === MODIFICATIONS FOR "CONTENT TO BORDERS" === */
+    .container {
+        width: 100%;         /* Make the container use the full available width */
+        padding-left: 15px;  /* Maintain some padding from the edge, adjust if you want less */
+        padding-right: 15px; /* Maintain some padding from the edge, adjust if you like */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;   
+        padding-left: 0;  /* Remove previous mobile-specific L/R padding */
+        padding-right: 0; /* As the container now provides the edge spacing */
+    }
+    .intro-snippet p {
+        padding-left: 0;  /* Remove previous mobile-specific L/R padding */
+        padding-right: 0;
+        font-size: 0.95rem; 
+    }
+    .page-intro {
+        padding-left: 0;  /* Remove previous mobile-specific L/R padding */
+        padding-right: 0;
+        font-size: 0.95rem; 
+    }
+    /* === END OF MODIFICATIONS FOR "CONTENT TO BORDERS" === */
+    
+    /* Your other existing 768px styles */
+    .hero-title { font-size: 1.8rem; }
+    .section-title { font-size: 1.6rem; }
+    .page-title { font-size: 1.8rem; }
+    .game-tile { width: calc(50% - 15px); }
+    .contact-details-form-wrapper { gap: 20px; }
+    .contact-details, .contact-form-container { min-width: 100%; flex-basis: 100%; }
+}
+
+/* Styles to ensure desktop navigation is correct and hamburger is hidden */
+@media (min-width: 769px) {
+    .mobile-nav-toggle {
+        display: none; 
+    }
+
+    #main-navigation-ul { 
+        display: flex !important; 
+        flex-direction: row;
+        position: static; 
+        width: auto; 
+        background-color: transparent; 
+        box-shadow: none; 
+    }
+    /* MODIFIED .main-navigation ul li to target #main-navigation-ul li for specificity */
+    #main-navigation-ul li { 
+        width: auto; 
+        margin-bottom: 0; 
+        text-align: left; 
+        border-bottom: none; 
+        margin-left: 20px; 
+    }
+    #main-navigation-ul li:first-child { /* More specific selector */
+        margin-left: 0; 
+    }
+    #main-navigation-ul li a { /* More specific selector */
+        display: inline-block; 
+        width: auto; 
+        padding: 0.6em 1.2em; 
+        border: 2px solid transparent; 
+        border-radius: 5px; 
+    }
+}
+
+
+@media (max-width: 600px) { 
+    body {
+        padding-top: 70px; 
+    }
+    .logo-image {
+        max-height: 30px; 
+        margin-bottom: 0; 
+    }
+    .site-header { 
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .mobile-nav-toggle { 
+        top: 8px; 
+        right: 10px; 
+    }
+
+    /* MODIFIED .main-navigation ul li and a to target #main-navigation-ul for specificity when open */
+    #main-navigation-ul.nav-is-open li { /* Style for list items ONLY when menu is open */
+        margin-bottom: 0; 
+    }
+    #main-navigation-ul.nav-is-open li a { /* Style for links ONLY when menu is open */
+        padding: 0.7em 1em; 
+        font-size: 0.9rem; 
+    }
+    
+    /* --- MODIFICATIONS FOR "CONTENT TO BORDERS" on very small screens --- */
+    .container {
+        padding-left: 10px;  /* Further reduce side padding */
+        padding-right: 10px;
+    }
+    /* .hero-subtitle, .intro-snippet p, .page-intro will inherit padding: 0 from 768px breakpoint */
+    /* --- END OF MODIFICATIONS FOR "CONTENT TO BORDERS" --- */
+
+    /* Your other existing 600px styles */
+    .hero-title { font-size: 1.6rem; }
+    .hero-subtitle { font-size: 0.9rem; /* padding:0 10px; is now handled by container */ }
+    .section-title { font-size: 1.4rem; }
+    .intro-snippet p { font-size: 0.9rem; /* padding:0 10px; is now handled by container */ }
+    .page-title { font-size: 1.6rem; }
+    .page-intro { font-size: 0.9rem; /* padding:0 10px; is now handled by container */ }
+    .game-tile { width: 100%; }
+    .game-tile h3 { font-size: 1.3rem; }
+    .game-tile .game-genre, .game-tile .game-description { font-size: 0.85rem; }
 }

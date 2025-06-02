@@ -3,42 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - CultivateU</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ancizar+Serif:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    
+    <title>{{ title or "CultivateU" }}</title>
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
 </head>
 <body>
 
-    <header>
-        <div class="container">  
-            <a href="/" class="site-logo-link">
-                <img src="/images/logo-wordmark.png" alt="CultivateU Logo" class="site-logo">
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo-link">
+                <img src="/images/logo.png" alt="CultivateU Logo" class="logo-image">
             </a>
-            <nav>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/about/">About</a></li>
-                    <li><a href="/games/">Games</a></li>
-                    <li><a href="/careers/">Careers</a></li>
-                    <li><a href="/contact/">Contact</a></li>
+            
+            <button class="mobile-nav-toggle" aria-controls="main-navigation-ul" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+                <span class="hamburger-bar"></span>
+            </button>
+
+            <nav class="main-navigation">
+                <ul id="main-navigation-ul"> 
+                    {# <li><a href="/" {% if page.url == "/" %}class="active"{% endif %}>Home</a></li> #}
+                    <li><a href="/about/" {% if page.url == "/about/" %}class="active"{% endif %}>About Us</a></li>
+                    <li><a href="/games/" {% if page.url == "/games/" %}class="active"{% endif %}>Games</a></li>
+                    <li><a href="/careers/" {% if page.url == "/careers/" %}class="active"{% endif %}>Careers</a></li>
+                    <li><a href="/contact/" {% if page.url == "/contact/" %}class="active"{% endif %}>Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <div class="container"> 
-        <main>
+    <main>
+        <div class="container">
             {{ content | safe }}
-        </main>
+        </div>
+    </main>
 
-        <footer>
-            <p>&copy; 2025 CultivateU Studios Pvt Ltd. All rights reserved.</p>
-        </footer>
-    </div> 
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ metadata.currentYear }} CULTIVATEU STUDIOS PRIVATE LIMITED. All rights reserved.</p>
+        </div>
+    </footer>
 
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // --- Game Tile Click Effect Script ---
+        const gameTiles = document.querySelectorAll('.game-tile');
+        if (gameTiles.length > 0) {
+            gameTiles.forEach(tile => {
+                tile.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    const currentlyActive = this.classList.contains('is-active');
+                    gameTiles.forEach(t => {
+                        t.classList.remove('is-active');
+                    });
+                    if (!currentlyActive) {
+                        this.classList.add('is-active');
+                    }
+                });
+            });
+
+            document.addEventListener('click', function(event) {
+                let clickedOnAGameTile = false;
+                gameTiles.forEach(tile => {
+                    if (tile === event.target || tile.contains(event.target)) {
+                        clickedOnAGameTile = true;
+                    }
+                });
+                if (!clickedOnAGameTile) {
+                    gameTiles.forEach(tile => {
+                        tile.classList.remove('is-active');
+                    });
+                }
+            });
+        }
+
+        // --- Mobile Navigation Toggle Script ---
+        const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+        const mainNavUl = document.getElementById('main-navigation-ul');
+
+        if (mobileNavToggle && mainNavUl) {
+            mobileNavToggle.addEventListener('click', () => {
+                const isOpened = mainNavUl.classList.toggle('nav-is-open'); // Toggles .nav-is-open on the UL
+                mobileNavToggle.setAttribute('aria-expanded', isOpened); // Sets aria-expanded on the button
+            });
+        }
+    });
+    </script>
 </body>
 </html>

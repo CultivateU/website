@@ -1,0 +1,15 @@
+# Eleventy output folder
+_site/
+
+# Node.js dependencies
+node_modules/
+
+# NPM debug log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
