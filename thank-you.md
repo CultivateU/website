@@ -2,7 +2,7 @@
 layout: layouts/base.njk
 title: Message Sent! - CultivateU
 permalink: /thank-you/
-eleventyExcludeFromCollections: true # Optional: Excludes this from sitemap or blog collections if you add those later
+eleventyExcludeFromCollections: true
 ---
 
 <div class="page-content">
