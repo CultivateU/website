@@ -33,10 +33,10 @@ permalink: /
                 </div>
             </div>
             <div class="game-tile">
-                <img src="/images/Abss-Escape.png" alt="Abyss Escape concept art">
-                <h3>Abyss Escape</h3>
+                <img src="/images/Abss-Escape.png" alt="HAL concept art">
+                <h3>HAL</h3>
                 <p class="game-genre"><strong>Genre:</strong> Action/Educational</p>
-                <p class="game-description">Escape the abyss with skill-based combat and progressive learning.</p>
+                <p class="game-description">Hunt the Abyss Life with skill-based combat and progressive learning.</p>
                 <div class="tile-overlay"> 
                     <span class="coming-soon-text">COMING SOON</span>
                 </div>
