@@ -40,7 +40,7 @@ permalink: /careers/
             <h2>Ready to Make an Impact?</h2>
             <p>If you're excited by our mission and believe you have what it takes, we'd love to hear from you!</p>
             {# Replace the link below with the actual link to your Google Form or your careers email address #}
-            <a href="https://forms.gle/e57YaUNH6xT6pQWG7" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Apply Now / Express Interest</a>
+            <a href="https://forms.gle/5ci83BYpwaHwrhMk9" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Apply Now / Express Interest</a>
             <p style="margin-top:10px; font-size:0.9em;">(We are currently inviting passionate individuals, to join project-based teams.)</p>
         </div>
     </div>
